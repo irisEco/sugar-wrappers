@@ -4,6 +4,7 @@ const bodyParser = require("koa-bodyparser")
 const controller = require('./controller')
 const templating = require("./templating");
 let staticFiles = require("./static-files");
+const path = require("path");
 const app = new Koa();
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -27,11 +28,21 @@ app.use(bodyParser());
 
 // 负责给ctx加上render()来使用Nunjucks
 app.use(
-  templating("views", {
+  templating("view", {
     noCache: !isProduction,
     watch: !isProduction
   })
 );
+
+
+
+
+
+
+
+
+
+
 //挂载中间件,处理URL路由
 app.use(router.routes());
 app.use(controller())

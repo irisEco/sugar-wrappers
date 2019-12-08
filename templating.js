@@ -1,4 +1,5 @@
 const nunjucks = require("nunjucks");
+const path = require("path")
 
 function createEnv(path, opts) {
   var autoescape = opts.autoescape === undefined ? true : opts.autoescape,
@@ -6,7 +7,7 @@ function createEnv(path, opts) {
     watch = opts.watch || false,
     throwOnUndefined = opts.throwOnUndefined || false,
     env = new nunjucks.Environment(
-      new nunjucks.FileSystemLoader(path || "views", {
+      new nunjucks.FileSystemLoader(path || "view", {
         noCache: noCache,
         watch: watch
       }),
@@ -41,5 +42,33 @@ function templating(path, opts) {
     await next();
   };
 }
+
+
+
+var env = createEnv("view", {
+  watch: true,
+  filters: {
+    hex: function(n) {
+      return "0x" + n.toString(16);
+    }
+  }
+});
+
+var s = env.render("welcome.html", {
+  name: "<Nunjucks>",
+  fruits: ["Apple", "Pear", "Banana"],
+  count: 12000
+});
+
+console.log(s);
+
+console.log(
+  env.render("base.html", {
+    header: "Hello",
+    body: "bla bla bla..."
+  })
+);
+
+
 
 module.exports = templating;
