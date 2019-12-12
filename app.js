@@ -37,12 +37,6 @@ app.use(
 
 
 
-
-
-
-
-
-
 //挂载中间件,处理URL路由
 app.use(router.routes());
 app.use(controller())

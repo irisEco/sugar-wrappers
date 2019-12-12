@@ -1,31 +1,33 @@
 var fn_index = async (ctx, next) => {
-  ctx.response.body = `<h1>Index</h1>
-        <form action="/signin" method="post">
-            <p>Name: <input name="name" value="koa"></p>
-            <p>Password: <input name="password" type="password"></p>
-            <p><input type="submit" value="Submit"></p>
-        </form>`;
+  await ctx.render("sigin_in.html", {
+    title: "Sign In",
+    name: "Mr "
+  });
 };
 
 var fn_signin = async (ctx, next) => {
-  var name = ctx.request.body.name || "",
+  var name = ctx.request.body.user || "",
     password = ctx.request.body.password || "";
+  console.log(ctx.params);
     console.log(`signin with name: ${name}, password: ${password}`);
   if (name === "koa" && password === "12345") {
-    // ctx.response.body = `<h1>Welcome, ${name}!</h1>`;
-    ctx.render("welcome.html", {
+    ctx.response.body = `<h1>Welcome, ${name}!</h1>`;
+    console.log("is ok!")
+   await ctx.render("index.html", {
       title: "Sign In OK",
       name: "Mr Node"
     });
+  
   } else {
-    ctx.response.body = `<h1>Login failed!</h1>
-        <p><a href="/">Try again</a></p>`;
-     ctx.render("sigin_fail.html", {
+    // ctx.response.body = `<h1>Login failed!</h1>
+    //     <p><a href="/">Try again</a></p>`;
+   await  ctx.render("404.html", {
        title: "Sign In OK",
        name: "Mr Node"
      });
   }
 };
+
 
 module.exports = {
   "GET /": fn_index,
