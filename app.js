@@ -1,11 +1,12 @@
 const Koa = require("koa");
-const router = require("koa-router")()
-const bodyParser = require("koa-bodyparser")
-const controller = require('./controller')
+const router = require("koa-router")();
+const bodyParser = require("koa-bodyparser");
+const controller = require("./controller");
 const templating = require("./templating");
 let staticFiles = require("./static-files");
 const path = require("path");
 const app = new Koa();
+
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -34,17 +35,11 @@ app.use(
   })
 );
 
-
-
-
 //挂载中间件,处理URL路由
 app.use(router.routes());
-app.use(controller())
-
+app.use(controller());
 
 app.listen(3000, () => {
   console.log("server is running at http://localhost:3000");
 });
-
-
 

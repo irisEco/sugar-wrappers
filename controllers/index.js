@@ -13,6 +13,9 @@ var fn_signin = async (ctx, next) => {
   if (name === "koa" && password === "12345") {
     ctx.response.body = `<h1>Welcome, ${name}!</h1>`;
     console.log("is ok!")
+// -------------测试----------------------------
+
+//-------------------------------------------
    await ctx.render("index.html", {
       title: "Sign In OK",
       name: "Mr Node"
