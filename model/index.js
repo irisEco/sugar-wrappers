@@ -8,7 +8,7 @@ console.log("username: ", config.username);
 console.log("password: ", config.password);
 console.log("host:", config.host);
 
-var sequelize = new Sequelize(
+var seq = new Sequelize(
   config.database,
   config.username,
   config.password,
@@ -24,5 +24,6 @@ var sequelize = new Sequelize(
 );
 
 module.exports = {
-  seq
-}
+  "seq":seq,
+  "Sequelize":Sequelize
+};

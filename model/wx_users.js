@@ -1,25 +1,25 @@
-const Seq = require("./index");
+const model = require("./index");
 
-var WxUser = Seq.define(
+var WxUser = model.seq.define(
   "wx_user",
   {
     id: {
-      type: Seq.STRING(50),
+      type: model.Sequelize.STRING(50),
       primaryKey: true
     },
-    name: Seq.STRING(100),
-    gender: Seq.BOOLEAN,
-    createdAt: Seq.BIGINT,
-    updatedAt: Seq.BIGINT,
-    version: Seq.BIGINT,
-    openid: Seq.STRING(28),
-    nickname: Seq.CHAR(100),
-    avatarurl: Seq.STRING(100),
-    gender: Seq.CHAR(2),
-    country: Seq.CHAR(50),
-    language: Seq.CHAR(18),
-    ctime: Seq.DATE,
-    mobile: Seq.CHAR(18)
+    name: model.Sequelize.STRING(100),
+    gender: model.Sequelize.BOOLEAN,
+    createdAt: model.Sequelize.BIGINT,
+    updatedAt: model.Sequelize.BIGINT,
+    version: model.Sequelize.BIGINT,
+    openid: model.Sequelize.STRING(28),
+    nickname: model.Sequelize.CHAR(100),
+    avatarurl: model.Sequelize.STRING(100),
+    gender: model.Sequelize.CHAR(2),
+    country: model.Sequelize.CHAR(50),
+    language: model.Sequelize.CHAR(18),
+    ctime: model.Sequelize.DATE,
+    mobile: model.Sequelize.CHAR(18)
   },
   {
     timestamps: false
@@ -27,8 +27,7 @@ var WxUser = Seq.define(
   // { define: { freezeTableName: true } }
 );
 
-module.exports = {
-  WxUser
-};
+module.exports = WxUser;
+
 
 
