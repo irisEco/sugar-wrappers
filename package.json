@@ -2,10 +2,11 @@
   "name": "sugar-wrappers",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon node bin/www"
   },
   "author": "",
   "license": "ISC",
@@ -17,12 +18,23 @@
     "koa-router": "^7.0.0",
     "koa-static": "^5.0.0",
     "koa-webpack": "^5.2.4",
+    "lodash": "^4.17.15",
+    "mysql": "2.11.1",
+    "nodemon": "^2.0.2",
     "nunjucks": "2.4.2",
-    "webpack": "^4.41.2",
-    "sequelize": "3.24.1",
-    "mysql": "2.11.1"
+    "sequelize": "3.24.1"
   },
   "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irisEco/sugar-wrappers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/irisEco/sugar-wrappers/issues"
+  },
+  "homepage": "https://github.com/irisEco/sugar-wrappers#readme"
 }

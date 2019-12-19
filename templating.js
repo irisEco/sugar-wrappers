@@ -60,14 +60,6 @@ var s = env.render("welcome.html", {
   count: 12000
 });
 
-console.log(s);
-
-console.log(
-  env.render("base.html", {
-    header: "Hello",
-    body: "bla bla bla..."
-  })
-);
 
 
 

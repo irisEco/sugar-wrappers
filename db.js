@@ -1,5 +1,7 @@
+// 测试 model 查询等
+
 const Sequlize = require("sequelize");
-const config = require("./config");
+const config = require("./conifg/db");
 console.log("init sequelize...");
 
 var sequelize = new Sequelize(
