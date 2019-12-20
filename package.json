@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
+    "db:migrate":"node db/migrate.js",
+    "db:takes":"node db/takes.js",
     "dev": "nodemon node bin/www"
   },
   "author": "",
@@ -19,6 +21,7 @@
     "koa-static": "^5.0.0",
     "koa-webpack": "^5.2.4",
     "lodash": "^4.17.15",
+    "mddir": "^1.1.1",
     "mysql": "2.11.1",
     "nodemon": "^2.0.2",
     "nunjucks": "2.4.2",

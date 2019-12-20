@@ -1,4 +1,3 @@
-const model = require("./index");
 const Sequelize = require("sequelize");
 const user = {
   id: {

@@ -1,8 +1,6 @@
 // todo 实现 组局模型
 const Sequelize = require("sequelize");
-const model = require("./index");
 
-console.log(model);
 const plan = {
   id: {
     type: Sequelize.STRING(50),
