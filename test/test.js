@@ -1,6 +1,6 @@
 // 测试 model 查询等
 
-const model = require("../model/index");
+const model = require("../model_test/index");
 console.log("init sequelize...");
 
 var Pet = model.seq.define(
