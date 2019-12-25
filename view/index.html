@@ -513,6 +513,7 @@
                 </div>
                 <ul>
                     {% for user in users %}
+                    <li>{{user.name if user.name else "暂无"}}</li>
                     <li>{{user.nickname if user.nickname else "暂无"}}</li>
                     <li>{{user.openid if user.openid else "暂无" }}</li>
                     <li>{{user.gender if user.gender else "暂无" }}</li>

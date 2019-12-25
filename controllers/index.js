@@ -1,5 +1,4 @@
-const WxUser = require("../model/wx_users");
-// const Plan = require("../model/plans");
+const db = require("../models/index");
 
 var fn_index = async (ctx, next) => {
   await ctx.render("sigin_in.html", {
@@ -17,27 +16,15 @@ var fn_signin = async (ctx, next) => {
     ctx.response.body = `<h1>Welcome, ${name}!</h1>`;
     console.log("is ok!");
     // -------------测试----------------------------
-    var wx_users = await WxUser.findAll({
+    var wx_users = await db.WxUser.findAll({
       where: {
-        name: "Gaffey"
+        name: "John Doe"
       }
     }).then(res => {
       return res.map(row => {
         return row.dataValues;
       });
     });
-
-    // var plans = await Plan.findAll({
-    //   where: {
-    //     title: "test1"
-    //   }
-    // }).then(res => {
-    //   return res.map(row => {
-    //     return row.dataValues;
-    //   });
-    // });
-    // console.log(plans)
-
 
     //-------------------------------------------
     await ctx.render("index.html", {

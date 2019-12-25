@@ -2,18 +2,18 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    
-      // Add altering commands here.
-      // Return a promise to correctly handle asynchronicity.
+                                       /*
+      Add altering commands here.
+      Return a promise to correctly handle asynchronicity.
 
-      // Example:
-    let now = new Date();
+      Example:
+      */
+       let now = new Date();
       return queryInterface.bulkInsert(
-        "Plans",
+        "WxUsers",
         [
           {
-            title: "John Doe",
-            type: "饭局",
+            name: "John Doe",
             createdAt: now,
             updatedAt: now
           }
@@ -21,7 +21,7 @@ module.exports = {
         {}
       );
     
-  },
+                                     },
 
   down: (queryInterface, Sequelize) => {
     /*

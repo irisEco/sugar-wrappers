@@ -6,12 +6,15 @@ module.exports = {
     // Return a promise to correctly handle asynchronicity.
 
     // Example:
+     let now = new Date();
     return queryInterface.bulkInsert(
       "Plans",
       [
         {
           title: "chen",
-          type: "饭局"
+          type: "饭局",
+          createdAt: now,
+          updatedAt: now
         }
       ],
       {}
