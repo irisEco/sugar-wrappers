@@ -13,6 +13,7 @@
     "database": "sugar_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "logging": "log.debug",
     "operatorsAliases": false
   },
   "production": {

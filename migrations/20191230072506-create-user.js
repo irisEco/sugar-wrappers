@@ -1,50 +1,42 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("WxUsers", {
+    return queryInterface.createTable("users", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      // plansId: {
-      //   type: Sequelize.INTEGER,
-      //   allowNull: false,
-      //   references: {
-      //     model: "Plan", // name of Target model
-      //     key: "id" // key in Target model that we're referencing
-      //   },
-      // },
-      name: {
+      username: {
         type: Sequelize.STRING
       },
-      gender: {
+      password: {
         type: Sequelize.STRING
       },
-      version: {
+      salt: {
         type: Sequelize.STRING
       },
-      openid: {
+      realName: {
         type: Sequelize.STRING
       },
-      nickname: {
+      avatar: {
         type: Sequelize.STRING
       },
-      avatarurl: {
+      phone: {
         type: Sequelize.STRING
       },
-      country: {
+      email: {
         type: Sequelize.STRING
       },
-      language: {
+      sex: {
+        type: Sequelize.STRING
+      },
+      locked: {
         type: Sequelize.STRING
       },
       ctime: {
         type: Sequelize.DATE
-      },
-      mobile: {
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -59,6 +51,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('WxUsers');
+    return queryInterface.dropTable('users');
   }
 };

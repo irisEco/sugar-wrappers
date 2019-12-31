@@ -21,9 +21,11 @@ module.exports = (sequelize, DataTypes) => {
       openid: DataTypes.STRING,
       prole: DataTypes.STRING,
       checkedRemind: DataTypes.STRING,
-      checkedNumber: DataTypes.STRING,
+      checkedNumber: DataTypes.STRING
     },
-    {}
+    {
+      timestamps: false
+    }
   );
   Plan.associate = function(models) {
     // associations can be defined here

@@ -1,49 +1,47 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("WxUsers", {
+    return queryInterface.createTable("logs", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      // plansId: {
-      //   type: Sequelize.INTEGER,
-      //   allowNull: false,
-      //   references: {
-      //     model: "Plan", // name of Target model
-      //     key: "id" // key in Target model that we're referencing
-      //   },
-      // },
-      name: {
+      discription: {
         type: Sequelize.STRING
       },
-      gender: {
+      username: {
         type: Sequelize.STRING
       },
-      version: {
-        type: Sequelize.STRING
-      },
-      openid: {
-        type: Sequelize.STRING
-      },
-      nickname: {
-        type: Sequelize.STRING
-      },
-      avatarurl: {
-        type: Sequelize.STRING
-      },
-      country: {
-        type: Sequelize.STRING
-      },
-      language: {
-        type: Sequelize.STRING
-      },
-      ctime: {
+      startTime: {
         type: Sequelize.DATE
       },
-      mobile: {
+      spendTime: {
+        type: Sequelize.DATE
+      },
+      basePath: {
+        type: Sequelize.STRING
+      },
+      url: {
+        type: Sequelize.STRING
+      },
+      method: {
+        type: Sequelize.STRING
+      },
+      params: {
+        type: Sequelize.STRING
+      },
+      userAgent: {
+        type: Sequelize.STRING
+      },
+      ip: {
+        type: Sequelize.STRING
+      },
+      result: {
+        type: Sequelize.STRING
+      },
+      permissions: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -59,6 +57,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('WxUsers');
+    return queryInterface.dropTable('logs');
   }
 };

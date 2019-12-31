@@ -1,11 +1,17 @@
 const db = require("../models/index");
 
 var fn_index = async (ctx, next) => {
+
   await ctx.render("sigin_in.html", {
     title: "Sign In",
     name: "Mr "
   });
 };
+
+var fn_registered = async (ctx, next) => {
+  await ctx.render("sigin_up.html")
+}
+
 
 var fn_signin = async (ctx, next) => {
   var name = ctx.request.body.user || "",
@@ -44,5 +50,6 @@ var fn_signin = async (ctx, next) => {
 
 module.exports = {
   "GET /": fn_index,
-  "POST /signin": fn_signin
+  "POST /signin": fn_signin,
+  "GET /registered": fn_registered
 };
