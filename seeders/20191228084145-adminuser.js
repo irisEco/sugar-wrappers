@@ -7,43 +7,43 @@ module.exports = {
       Return a promise to correctly handle asynchronicity.
 
       Example:*/
-    let now = new Date()
-    let r = await queryInterface.bulkInsert(
-      "roles",
-      [
-        {
-          name: "管理员",
-          title: "S级管理员角色",
-          description: "管理员萌萌哒",
-          ctime: "2019-12-28",
-          orders: "1",
-          createdAt: now,
-          updatedAt: now
-        }
-      ],
-      {}
-    ).then((roles) => {
-                        console.log(roles);
-                         queryInterface.bulkInsert("AdminPermission", {
-                          pid: "2",
-                          name: "后台权限",
-                          type: "后台",
-                          permissionValue: "3",
-                          url: "",
-                          icon: "",
-                          status: "normal",
-                          ctime: "2019-12-28",
-                          orders: "4",
-                          roleId: roles[0][0].id,
-                          createdAt: now,
-                          updatedAt: now
-                        });
-                      });
+    // let now = new Date()
+    // let r = await queryInterface.bulkInsert(
+    //   "roles",
+    //   [
+    //     {
+    //       name: "管理员",
+    //       title: "S级管理员角色",
+    //       description: "管理员萌萌哒",
+    //       ctime: "2019-12-28",
+    //       orders: "1",
+    //       createdAt: now,
+    //       updatedAt: now
+    //     }
+    //   ],
+    //   {}
+    // ).then((roles) => {
+    //                     console.log(roles);
+    //                      queryInterface.bulkInsert("AdminPermission", {
+    //                       pid: "2",
+    //                       name: "后台权限",
+    //                       type: "后台",
+    //                       permissionValue: "3",
+    //                       url: "",
+    //                       icon: "",
+    //                       status: "normal",
+    //                       ctime: "2019-12-28",
+    //                       orders: "4",
+    //                       roleId: roles[0][0].id,
+    //                       createdAt: now,
+    //                       updatedAt: now
+    //                     });
+    //                   });
 
     // const roles = await queryInterface.sequelize.query(
     //   `SELECT id from AdminRoles;`
     // );
-    console.log(r);
+    // console.log(r);
     // await queryInterface.bulkInsert("AdminPermission", {
     //   pid: "2",
     //   name: "后台权限",
@@ -86,9 +86,9 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-    await queryInterface.bulkDelete("users", null, {});
+    // await queryInterface.bulkDelete("users", null, {});
     // await queryInterface.bulkDelete("AdminPermission", null, {});
-    await queryInterface.bulkDelete("roles", null, {});
+    // await queryInterface.bulkDelete("roles", null, {});
     return;
   }
 };

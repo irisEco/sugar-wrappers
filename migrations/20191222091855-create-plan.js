@@ -8,13 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      // usersId: {
-      //   type: Sequelize.INTEGER,
-      //   references: {
-      //     model: "WxUsers",
-      //     key: "id"
-      //   }
-      // },
       type: {
         type: Sequelize.STRING
       },

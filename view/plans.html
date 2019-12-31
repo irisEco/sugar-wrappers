@@ -26,8 +26,8 @@
             <th>详细地址</th>
             <th>详情介绍</th>
             <th>地址</th>
-            <th>创建时间</th>
-            <th>更新时间</th>
+            <!-- <th>创建时间</th>
+            <th>更新时间</th> -->
             <th>操作</th>
           </tr>
         </thead>
@@ -51,8 +51,8 @@
             <td>{{p.detailedAddress if p.detailedAddress else '暂无'}}</td>
             <td>{{p.introduction if p.introduction else '暂无'}}</td>
             <td>{{p.region if p.region else '暂无'}}</td>
-            <td>{{p.createdAt if p.createdAt else '暂无'}}</td>
-            <td>{{p.updatedAt if p.updatedAt else '暂无'}}</td>
+            <!-- <td>{{p.createdAt if p.createdAt else '暂无'}}</td>
+            <td>{{p.updatedAt if p.updatedAt else '暂无'}}</td> -->
             <td>
               <a href="groups/edit" class="btn btn-info">编辑</a>
               <a href="groups/delete" class="btn btn-danger">删除</a>
